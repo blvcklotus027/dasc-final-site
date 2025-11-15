@@ -1,0 +1,31 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Apartments from "./pages/Apartments";
+import Construction from "./pages/Construction";
+import Contact from "./pages/Contact";
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-black/40 backdrop-blur-sm text-white">
+        <Navbar />
+
+        {/* FĂRĂ max-w-7xl și mx-auto aici, ca să permitem full-width */}
+        <main className="pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/despre" element={<About />} />
+            <Route path="/apartamente" element={<Apartments />} />
+            <Route path="/santier" element={<Construction />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
