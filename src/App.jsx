@@ -6,7 +6,8 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const sectionIds = ["hero", "about", "apartments", "contact"];
+    // adăugăm și "santier" în lista de secțiuni
+    const sectionIds = ["hero", "about", "apartments", "santier", "contact"];
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -73,6 +74,12 @@ export default function App() {
               className={navLinkClass("apartments")}
             >
               Apartamente
+            </button>
+            <button
+              onClick={scrollToSection("santier")}
+              className={navLinkClass("santier")}
+            >
+              Șantier
             </button>
             <button
               onClick={scrollToSection("contact")}

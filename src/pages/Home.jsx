@@ -190,6 +190,41 @@ export default function Home() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-primaryGold/70 to-transparent opacity-70" />
       </div>
 
+      {/* SANTIER */}
+      <section id="santier" className="px-4 sm:px-6 md:px-20 py-16">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
+            PROGRES ȘANTIER
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
+            Progresul <span className="text-primaryGold">șantierului</span>
+          </h2>
+
+          <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-center text-sm sm:text-base">
+            Actualizăm periodic evoluția construcției. Mai jos poți vedea câteva
+            cadre reprezentative din diferite etape de execuție.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
+              Imagine șantier 1
+            </div>
+            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
+              Imagine șantier 2
+            </div>
+            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
+              Imagine șantier 3
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* linie aurie */}
+      <div className="px-4 sm:px-6 md:px-20">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-primaryGold/70 to-transparent opacity-70" />
+      </div>
+
       {/* CONTACT */}
       <section id="contact" className="px-4 sm:px-6 md:px-20 py-16 pb-20">
         <div className="max-w-6xl mx-auto">
