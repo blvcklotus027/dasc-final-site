@@ -4,6 +4,9 @@ import bgVideo from "../assets/video/background.mp4";
 import plan1 from "../assets/apartments/plan-1.png";
 import plan2 from "../assets/apartments/plan-2.png";
 import plan3 from "../assets/apartments/plan-3.png";
+import siteImg1 from "../assets/santier/santier-1.jpg";
+import siteImg3 from "../assets/santier/santier-3.jpg";
+import siteVideo from "../assets/santier/santier-video.mp4";
 
 export default function Home() {
   const cardClass =
@@ -217,34 +220,53 @@ export default function Home() {
       </div>
 
       {/* SANTIER */}
-      <section id="santier" className="px-4 sm:px-6 md:px-20 py-16">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
-            PROGRES ȘANTIER
-          </p>
+<section id="santier" className="px-4 sm:px-6 md:px-20 py-16">
+  <div className="max-w-6xl mx-auto">
+    <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
+      PROGRES ȘANTIER
+    </p>
 
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
-            Progresul <span className="text-primaryGold">șantierului</span>
-          </h2>
+    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
+      Progresul <span className="text-primaryGold">șantierului</span>
+    </h2>
 
-          <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-center text-sm sm:text-base">
-            Actualizăm periodic evoluția construcției. Mai jos poți vedea câteva
-            cadre reprezentative din diferite etape de execuție.
-          </p>
+    <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-center text-sm sm:text-base">
+      Actualizăm periodic evoluția construcției. Mai jos poți vedea câteva cadre
+      reprezentative din diferite etape de execuție.
+    </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
-              Imagine șantier 1
-            </div>
-            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
-              Imagine șantier 2
-            </div>
-            <div className="bg-white/10 rounded-xl h-44 flex items-center justify-center text-gray-300 text-sm">
-              Imagine șantier 3
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* Imagine șantier 1 */}
+      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+        <img
+          src={siteImg1}
+          alt="Șantier DASC - imagine 1"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Video șantier */}
+      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+        <video
+          src={siteVideo}
+          className="w-full h-full object-cover"
+          controls
+          muted
+          playsInline
+        />
+      </div>
+
+      {/* Imagine șantier 3 */}
+      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+        <img
+          src={siteImg3}
+          alt="Șantier DASC - imagine 3"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* linie aurie */}
       <div className="px-4 sm:px-6 md:px-20">
