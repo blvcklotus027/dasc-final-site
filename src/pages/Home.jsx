@@ -4,11 +4,12 @@ import bgVideo from "../assets/video/background.mp4";
 import plan1 from "../assets/apartments/plan-1.png";
 import plan2 from "../assets/apartments/plan-2.png";
 import plan3 from "../assets/apartments/plan-3.png";
+// imagini + video șantier
 import siteImg1 from "../assets/santier/santier-1.jpg";
 import siteImg3 from "../assets/santier/santier-3.jpg";
 import siteVideo from "../assets/santier/santier-video.mp4";
 
-export default function Home() {
+export default function Home({ onOpenGallery }) {
   const cardClass =
     "bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 md:p-7 backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primaryGold/20";
 
@@ -17,6 +18,15 @@ export default function Home() {
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const handleOpenGallery = () => {
+    if (onOpenGallery) {
+      onOpenGallery();
+    } else {
+      // fallback dacă nu primim prop din App
+      window.location.href = "/galerie-santier";
+    }
   };
 
   return (
@@ -144,7 +154,6 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
             {/* 1 cameră */}
             <div className={cardClass}>
               <img
@@ -189,7 +198,7 @@ export default function Home() {
               </button>
             </div>
 
-            {/* 2 camere */}
+            {/* 3 camere */}
             <div className={cardClass}>
               <img
                 src={plan3}
@@ -198,7 +207,7 @@ export default function Home() {
               />
               <p className="text-sm text-gray-400 mb-1">Spațiu pentru toți</p>
 
-              <h3 className="text-xl font-semibold mb-2">2 camere</h3>
+              <h3 className="text-xl font-semibold mb-2">3 camere</h3>
               <p className="text-gray-200 mb-2">70 m²</p>
               <p className="text-primaryGold font-bold mb-4">Confort maxim</p>
 
@@ -209,7 +218,6 @@ export default function Home() {
                 Cere oferta →
               </button>
             </div>
-
           </div>
         </div>
       </section>
@@ -220,53 +228,63 @@ export default function Home() {
       </div>
 
       {/* SANTIER */}
-<section id="santier" className="px-4 sm:px-6 md:px-20 py-16">
-  <div className="max-w-6xl mx-auto">
-    <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
-      PROGRES ȘANTIER
-    </p>
+      <section id="santier" className="px-4 sm:px-6 md:px-20 py-16">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
+            PROGRES ȘANTIER
+          </p>
 
-    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
-      Progresul <span className="text-primaryGold">șantierului</span>
-    </h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
+            Progresul <span className="text-primaryGold">șantierului</span>
+          </h2>
 
-    <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-center text-sm sm:text-base">
-      Actualizăm periodic evoluția construcției. Mai jos poți vedea câteva cadre
-      reprezentative din diferite etape de execuție.
-    </p>
+          <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-center text-sm sm:text-base">
+            Actualizăm periodic evoluția construcției. Mai jos poți vedea câteva
+            cadre reprezentative din diferite etape de execuție.
+          </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {/* Imagine șantier 1 */}
-      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
-        <img
-          src={siteImg1}
-          alt="Șantier DASC - imagine 1"
-          className="w-full h-full object-cover"
-        />
-      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Imagine șantier 1 */}
+            <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+              <img
+                src={siteImg1}
+                alt="Șantier DASC - imagine 1"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-      {/* Video șantier */}
-      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
-        <video
-          src={siteVideo}
-          className="w-full h-full object-cover"
-          controls
-          muted
-          playsInline
-        />
-      </div>
+            {/* Video șantier */}
+            <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+              <video
+                src={siteVideo}
+                className="w-full h-full object-cover"
+                controls
+                muted
+                playsInline
+              />
+            </div>
 
-      {/* Imagine șantier 3 */}
-      <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
-        <img
-          src={siteImg3}
-          alt="Șantier DASC - imagine 3"
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Imagine șantier 3 */}
+            <div className="bg-white/10 rounded-xl h-44 overflow-hidden">
+              <img
+                src={siteImg3}
+                alt="Șantier DASC - imagine 3"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* BUTON VEZI GALERIA */}
+          <div className="mt-8 flex justify-center">
+            <button
+              onClick={handleOpenGallery}
+              className="px-6 py-3 bg-transparent border border-primaryGold/70 text-primaryGold font-semibold rounded-lg hover:bg-primaryGold hover:text-black transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              Vezi galeria completă
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* linie aurie */}
       <div className="px-4 sm:px-6 md:px-20">
@@ -291,7 +309,6 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-
             {/* Card 1 - Sună direct */}
             <div className={cardClass}>
               <p className="text-3xl mb-3">📞</p>
@@ -341,13 +358,11 @@ export default function Home() {
                 DASC Family Residence · Buiucani
               </span>
             </div>
-
           </div>
 
           {/* Butoane finale */}
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-
               <a
                 href="tel:+37379505099"
                 rel="nofollow"
@@ -357,17 +372,15 @@ export default function Home() {
               </a>
 
               <a
-                href="mailto:dascmd"
+                href="mailto:dascmd@yahoo.com"
                 className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5 block text-center"
               >
                 Scrie-ne un mesaj
               </a>
-
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

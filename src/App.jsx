@@ -1,12 +1,14 @@
 // src/App.jsx
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
+import Gallery from "./pages/Gallery.jsx";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [currentPage, setCurrentPage] = useState("home"); // "home" sau "gallery"
 
   useEffect(() => {
-    // adăugăm și "santier" în lista de secțiuni
+    // pentru pagina HOME facem highlight la secțiuni în navbar
     const sectionIds = ["hero", "about", "apartments", "santier", "contact"];
 
     const handleScroll = () => {
@@ -29,10 +31,12 @@ export default function App() {
       setActiveSection(closestId);
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (currentPage === "home") {
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [currentPage]);
 
   const scrollToSection = (id) => (e) => {
     e.preventDefault();
@@ -52,60 +56,66 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      {/* NAVBAR FIX + TITLU */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
-        {/* rând cu meniul */}
-        <div className="max-w-6xl mx-auto flex items-center justify-center px-4 sm:px-6 md:px-8 h-14 sm:h-16">
-          <nav className="flex items-center gap-3 sm:gap-4 md:gap-6 overflow-x-auto">
-            <button
-              onClick={scrollToSection("hero")}
-              className={navLinkClass("hero")}
-            >
-              Acasă
-            </button>
-            <button
-              onClick={scrollToSection("about")}
-              className={navLinkClass("about")}
-            >
-              Despre
-            </button>
-            <button
-              onClick={scrollToSection("apartments")}
-              className={navLinkClass("apartments")}
-            >
-              Apartamente
-            </button>
-            <button
-              onClick={scrollToSection("santier")}
-              className={navLinkClass("santier")}
-            >
-              Șantier
-            </button>
-            <button
-              onClick={scrollToSection("contact")}
-              className={navLinkClass("contact")}
-            >
-              Contact
-            </button>
-          </nav>
-        </div>
-
-        {/* rând cu titlul DASC */}
-        <div className="border-t border-white/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-2 sm:py-3 text-center">
-            <button
-              onClick={scrollToSection("hero")}
-              className="font-semibold tracking-[0.25em] sm:tracking-[0.35em] text-xs sm:text-sm md:text-base text-gray-100"
-            >
-              <span className="text-primaryGold">DASC</span> FAMILY RESIDENCE
-            </button>
+      {/* NAVBAR – doar pe HOME */}
+      {currentPage === "home" && (
+        <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
+          {/* rând cu meniul */}
+          <div className="max-w-6xl mx-auto flex items-center justify-center px-4 sm:px-6 md:px-8 h-14 sm:h-16">
+            <nav className="flex items-center gap-3 sm:gap-4 md:gap-6 overflow-x-auto">
+              <button
+                onClick={scrollToSection("hero")}
+                className={navLinkClass("hero")}
+              >
+                Acasă
+              </button>
+              <button
+                onClick={scrollToSection("about")}
+                className={navLinkClass("about")}
+              >
+                Despre
+              </button>
+              <button
+                onClick={scrollToSection("apartments")}
+                className={navLinkClass("apartments")}
+              >
+                Apartamente
+              </button>
+              <button
+                onClick={scrollToSection("santier")}
+                className={navLinkClass("santier")}
+              >
+                Șantier
+              </button>
+              <button
+                onClick={scrollToSection("contact")}
+                className={navLinkClass("contact")}
+              >
+                Contact
+              </button>
+            </nav>
           </div>
-        </div>
-      </header>
 
-      {/* conținut – toate secțiunile în Home */}
-      <main className="pt-24 sm:pt-28 flex-1">
-        <Home />
+          {/* rând cu titlul DASC */}
+          <div className="border-t border-white/10">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-2 sm:py-3 text-center">
+              <button
+                onClick={scrollToSection("hero")}
+                className="font-semibold tracking-[0.25em] sm:tracking-[0.35em] text-xs sm:text-sm md:text-base text-gray-100"
+              >
+                <span className="text-primaryGold">DASC</span> FAMILY RESIDENCE
+              </button>
+            </div>
+          </div>
+        </header>
+      )}
+
+      {/* conținut */}
+      <main className={currentPage === "home" ? "pt-24 sm:pt-28 flex-1" : "flex-1"}>
+        {currentPage === "home" ? (
+          <Home onOpenGallery={() => setCurrentPage("gallery")} />
+        ) : (
+          <Gallery onBack={() => setCurrentPage("home")} />
+        )}
       </main>
     </div>
   );
