@@ -322,7 +322,7 @@ export default function Home({ onOpenGallery }) {
                 className="text-sm text-primaryGold hover:underline"
                 rel="nofollow"
               >
-                +373 79 505 099
+                +373 79 50 50 99
               </a>
             </div>
 
@@ -375,7 +375,7 @@ export default function Home({ onOpenGallery }) {
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <a
-                href="tel:+37379505099"
+                href="tel:+373 79 50 50 99"
                 rel="nofollow"
                 className="px-6 py-3 bg-primaryGold text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-transform duration-300 hover:-translate-y-0.5 block text-center"
               >
