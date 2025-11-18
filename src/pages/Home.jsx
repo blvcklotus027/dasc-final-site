@@ -346,7 +346,7 @@ export default function Home({ onOpenGallery }) {
               </button>
             </div>
 
-            {/* Card 3 */}
+            {/* Card 3 - Locație șantier + hartă */}
             <div className={cardClass}>
               <p className="text-3xl mb-3">📍</p>
               <h3 className="font-semibold mb-2">Locație șantier</h3>
@@ -354,6 +354,20 @@ export default function Home({ onOpenGallery }) {
                 Buiucani, Chișinău – zonă liniștită, cu acces facil spre centru,
                 parcări și transport public.
               </p>
+
+              {/* Harta Google Maps */}
+              <div className="w-full h-48 rounded-lg overflow-hidden border border-white/10 mb-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d836.6390267552557!2d28.78129226965639!3d47.02569191238784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDfCsDAxJzMyLjUiTiAyOMKwNDYnNTUuMCJF!5e1!3m2!1sru!2sus!4v1763493297611!5m2!1sru!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+
               <span className="text-sm text-primaryGold">
                 DASC Family Residence · Buiucani
               </span>
