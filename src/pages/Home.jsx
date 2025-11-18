@@ -333,17 +333,14 @@ export default function Home({ onOpenGallery }) {
               <p className="text-sm text-gray-300 mb-3">
                 Stabilim împreună o zi și o oră convenabilă pentru vizionare.
               </p>
-              <button
-                onClick={() =>
-                  window.open(
-                    "mailto:dascmd@yahoo.com?subject=Programare vizionare DASC Family Residence",
-                    "_blank"
-                  )
-                }
-                className="text-sm text-primaryGold hover:underline"
-              >
-                Trimite cerere de vizionare →
-              </button>
+              <a
+  href="https://www.instagram.com/dascdevelopment/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-sm text-primaryGold hover:underline inline-flex items-center gap-1"
+>
+  Trimite cerere de vizionare →
+</a>
             </div>
 
             {/* Card 3 - Locație șantier + hartă */}
@@ -386,11 +383,14 @@ export default function Home({ onOpenGallery }) {
               </a>
 
               <a
-                href="mailto:dascmd@yahoo.com"
-                className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5 block text-center"
-              >
-                Scrie-ne un mesaj
-              </a>
+  href="https://www.instagram.com/dascdevelopment/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5 block text-center"
+>
+  Scrie-ne pe Instagram
+</a>
+
             </div>
           </div>
         </div>
