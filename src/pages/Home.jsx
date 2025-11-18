@@ -276,7 +276,7 @@ export default function Home() {
                 href="tel:+373 79 50 50 99"
                 className="text-sm text-primaryGold hover:underline"
               >
-                +373 79 50 50 99
+                +37379505099
               </a>
             </div>
 
