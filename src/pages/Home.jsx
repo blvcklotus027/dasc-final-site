@@ -1,5 +1,9 @@
 // src/pages/Home.jsx
 import bgVideo from "../assets/video/background.mp4";
+// imagini planimetrie
+import plan1 from "../assets/apartments/plan-1.png";
+import plan2 from "../assets/apartments/plan-2.png";
+import plan3 from "../assets/apartments/plan-3.png";
 
 export default function Home() {
   const cardClass =
@@ -137,7 +141,13 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 1 cameră */}
             <div className={cardClass}>
+              <img
+                src={plan1}
+                alt="Plan apartament 1 cameră"
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
               <p className="text-sm text-gray-400 mb-1">
                 Pentru tineri / investiție
               </p>
@@ -154,7 +164,13 @@ export default function Home() {
               </button>
             </div>
 
+            {/* 2 camere */}
             <div className={cardClass + " border-primaryGold/60 bg-white/8"}>
+              <img
+                src={plan2}
+                alt="Plan apartament 2 camere"
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
               <p className="text-sm text-gray-400 mb-1">Echilibru perfect</p>
               <h3 className="text-xl font-semibold mb-2">2 camere</h3>
               <p className="text-gray-200 mb-2">de la ~60–65 m²</p>
@@ -169,7 +185,13 @@ export default function Home() {
               </button>
             </div>
 
+            {/* 3 camere */}
             <div className={cardClass}>
+              <img
+                src={plan3}
+                alt="Plan apartament 3 camere"
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
               <p className="text-sm text-gray-400 mb-1">Spațiu pentru toți</p>
               <h3 className="text-xl font-semibold mb-2">3 camere</h3>
               <p className="text-gray-200 mb-2">de la ~75–80 m²</p>
@@ -251,10 +273,10 @@ export default function Home() {
                 informațiile de bază.
               </p>
               <a
-                href="tel:+37300000000"
+                href="tel:+373 79 50 50 99"
                 className="text-sm text-primaryGold hover:underline"
               >
-                +373 00 000 000
+                +373 79 50 50 99
               </a>
             </div>
 
@@ -294,7 +316,8 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <a
                 href="tel:+37300000000"
-                className="px-6 py-3 bg-primaryGold text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-transform duration-300 hover:-translate-y-0.5"
+                className="px-6 py-3 bg-primaryGold text-gray-9
+00 font-semibold rounded-lg hover:bg-yellow-400 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Sună acum
               </a>
