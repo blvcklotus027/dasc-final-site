@@ -152,7 +152,7 @@ export default function Home() {
                 Pentru tineri / investiție
               </p>
               <h3 className="text-xl font-semibold mb-2">1 cameră</h3>
-              <p className="text-gray-200 mb-2">de la ~44 m²</p>
+              <p className="text-gray-200 mb-2">44 m²</p>
               <p className="text-primaryGold font-bold mb-4">
                 Potrivit pentru start
               </p>
@@ -173,7 +173,7 @@ export default function Home() {
               />
               <p className="text-sm text-gray-400 mb-1">Echilibru perfect</p>
               <h3 className="text-xl font-semibold mb-2">2 camere</h3>
-              <p className="text-gray-200 mb-2">de la ~60–65 m²</p>
+              <p className="text-gray-200 mb-2">62 m²</p>
               <p className="text-primaryGold font-bold mb-4">
                 Ideal pentru familie
               </p>
@@ -189,12 +189,12 @@ export default function Home() {
             <div className={cardClass}>
               <img
                 src={plan3}
-                alt="Plan apartament 3 camere"
+                alt="Plan apartament 2 camere"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <p className="text-sm text-gray-400 mb-1">Spațiu pentru toți</p>
-              <h3 className="text-xl font-semibold mb-2">3 camere</h3>
-              <p className="text-gray-200 mb-2">de la ~75–80 m²</p>
+              <h3 className="text-xl font-semibold mb-2">2 camere</h3>
+              <p className="text-gray-200 mb-2">70 m²</p>
               <p className="text-primaryGold font-bold mb-4">Confort maxim</p>
               <button
                 onClick={() => smoothScrollTo("contact")}
