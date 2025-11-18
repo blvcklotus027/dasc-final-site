@@ -297,7 +297,7 @@ export default function Home() {
               <button
                 onClick={() =>
                   window.open(
-                    "mailto:contact@dasc.md?subject=Programare vizionare DASC Family Residence",
+                    "mailto:dascmd@yahoo.com?subject=Programare vizionare DASC Family Residence",
                     "_blank"
                   )
                 }
@@ -335,7 +335,7 @@ export default function Home() {
               </a>
 
               <a
-                href="mailto:contact@dasc.md"
+                href="mailto:dascmd"
                 className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5 block text-center"
               >
                 Scrie-ne un mesaj
