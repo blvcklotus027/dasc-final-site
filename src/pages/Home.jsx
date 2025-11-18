@@ -141,6 +141,7 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             {/* 1 cameră */}
             <div className={cardClass}>
               <img
@@ -160,7 +161,7 @@ export default function Home() {
                 onClick={() => smoothScrollTo("contact")}
                 className="text-sm text-primaryGold hover:underline"
               >
-                Cere oferta &rarr;
+                Cere oferta →
               </button>
             </div>
 
@@ -181,28 +182,31 @@ export default function Home() {
                 onClick={() => smoothScrollTo("contact")}
                 className="text-sm text-primaryGold hover:underline"
               >
-                Cere oferta &rarr;
+                Cere oferta →
               </button>
             </div>
 
-            {/* 3 camere */}
+            {/* 2 camere */}
             <div className={cardClass}>
               <img
                 src={plan3}
-                alt="Plan apartament 2 camere"
+                alt="Plan apartament 3 camere"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <p className="text-sm text-gray-400 mb-1">Spațiu pentru toți</p>
+
               <h3 className="text-xl font-semibold mb-2">2 camere</h3>
               <p className="text-gray-200 mb-2">70 m²</p>
               <p className="text-primaryGold font-bold mb-4">Confort maxim</p>
+
               <button
                 onClick={() => smoothScrollTo("contact")}
                 className="text-sm text-primaryGold hover:underline"
               >
-                Cere oferta &rarr;
+                Cere oferta →
               </button>
             </div>
+
           </div>
         </div>
       </section>
@@ -265,6 +269,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+            {/* Card 1 - Sună direct */}
             <div className={cardClass}>
               <p className="text-3xl mb-3">📞</p>
               <h3 className="font-semibold mb-2">Sună direct</h3>
@@ -273,13 +279,15 @@ export default function Home() {
                 informațiile de bază.
               </p>
               <a
-                href="tel:+373 79 50 50 99"
+                href="tel:+37379505099"
                 className="text-sm text-primaryGold hover:underline"
+                rel="nofollow"
               >
-                +37379505099
+                +373 79 505 099
               </a>
             </div>
 
+            {/* Card 2 */}
             <div className={cardClass}>
               <p className="text-3xl mb-3">📅</p>
               <h3 className="font-semibold mb-2">Programează o vizionare</h3>
@@ -295,10 +303,11 @@ export default function Home() {
                 }
                 className="text-sm text-primaryGold hover:underline"
               >
-                Trimite cerere de vizionare &rarr;
+                Trimite cerere de vizionare →
               </button>
             </div>
 
+            {/* Card 3 */}
             <div className={cardClass}>
               <p className="text-3xl mb-3">📍</p>
               <h3 className="font-semibold mb-2">Locație șantier</h3>
@@ -310,27 +319,33 @@ export default function Home() {
                 DASC Family Residence · Buiucani
               </span>
             </div>
+
           </div>
 
+          {/* Butoane finale */}
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+
               <a
-                href="tel:+37379 50 50 99"
-                className="px-6 py-3 bg-primaryGold text-gray-9
-00 font-semibold rounded-lg hover:bg-yellow-400 transition-transform duration-300 hover:-translate-y-0.5"
+                href="tel:+37379505099"
+                rel="nofollow"
+                className="px-6 py-3 bg-primaryGold text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-transform duration-300 hover:-translate-y-0.5 block text-center"
               >
                 Sună acum
               </a>
+
               <a
                 href="mailto:contact@dasc.md"
-                className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5"
+                className="px-6 py-3 border border-white/70 text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-transform duration-300 hover:-translate-y-0.5 block text-center"
               >
                 Scrie-ne un mesaj
               </a>
+
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }
