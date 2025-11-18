@@ -198,7 +198,7 @@ export default function Home({ onOpenGallery }) {
               </button>
             </div>
 
-            {/* 3 camere */}
+            {/* 2 camere */}
             <div className={cardClass}>
               <img
                 src={plan3}
@@ -207,7 +207,7 @@ export default function Home({ onOpenGallery }) {
               />
               <p className="text-sm text-gray-400 mb-1">Spațiu pentru toți</p>
 
-              <h3 className="text-xl font-semibold mb-2">3 camere</h3>
+              <h3 className="text-xl font-semibold mb-2">2 camere</h3>
               <p className="text-gray-200 mb-2">70 m²</p>
               <p className="text-primaryGold font-bold mb-4">Confort maxim</p>
 
