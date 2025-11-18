@@ -1,7 +1,14 @@
 // src/pages/Gallery.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Gallery() {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate("/contact"); // ⬅ Aici duce la pagina Contact
+  };
+
   // pozele le pui în public/santier/poza1.jpg, poza2.jpg etc.
   const images = [
     "/santier/poza1.jpg",
@@ -16,6 +23,14 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-black text-white px-4 sm:px-6 md:px-20 py-16">
       <div className="max-w-6xl mx-auto">
+        {/* 🔙 Buton Înapoi spre Contact */}
+        <button
+          onClick={goBack}
+          className="mb-6 px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20 transition"
+        >
+          ⬅ Înapoi
+        </button>
+
         <p className="text-[11px] sm:text-xs tracking-[0.3em] uppercase text-gray-300/70 mb-3 text-center">
           GALERIE ȘANTIER
         </p>
