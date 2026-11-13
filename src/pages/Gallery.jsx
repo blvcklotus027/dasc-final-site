@@ -15,6 +15,11 @@ export default function Gallery({ onBack }) {
    */
 
   const images = [
+    { thumb: "/santier/thumb/poza446.webp", large: "/santier/large/poza446.webp" },
+    { thumb: "/santier/thumb/poza447.webp", large: "/santier/large/poza447.webp" },
+    { thumb: "/santier/thumb/poza448.webp", large: "/santier/large/poza448.webp" },
+    { thumb: "/santier/thumb/poza449.webp", large: "/santier/large/poza449.webp" },
+    { thumb: "/santier/thumb/poza450.webp", large: "/santier/large/poza450.webp" },
     { thumb: "/santier/thumb/poza451.webp", large: "/santier/large/poza451.webp" },
     { thumb: "/santier/thumb/poza452.webp", large: "/santier/large/poza452.webp" },
     { thumb: "/santier/thumb/poza453.webp", large: "/santier/large/poza453.webp" },
